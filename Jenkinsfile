@@ -3,9 +3,6 @@ node {
 	stage('Scm checkout'){
 		checkout scm
 		}
-	stage("dockerrun"){
-		sh 'sudo chmod 777 /var/run/docker.sock'
-	}
 	stage('Build Image'){
 	app=docker.build("svsaket/newphp3")
 	}
